@@ -1,0 +1,40 @@
+.popupContainer {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba($color-dark, 0.5);
+  top: 0;
+  left: 0;
+
+  .popup {
+    width: 90%;
+    max-width: 920px;
+    height: 210px;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    padding: 56px 0px 56px 25px;
+
+    .xIcon {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 2%;
+      top: 0;
+      font-size: 40px;
+
+      &::after {
+        content: '\d7';
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    h2 {
+      @include title;
+      margin-bottom: 24px !important;
+    }
+  }
+}
