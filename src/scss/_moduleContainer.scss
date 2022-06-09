@@ -1,0 +1,22 @@
+.moduleContainer {
+  max-width: 1440px;
+  margin: auto;
+  padding: 20px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .moduleContent {
+    .title {
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .desc {
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+  }
+}
