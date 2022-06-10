@@ -15,21 +15,19 @@
     background-color: white;
     margin: auto;
     position: relative;
-    padding: 56px 0px 56px 25px;
+    padding: 25px 56px;
 
     h2 {
       @include title;
-      margin-bottom: 24px !important;
+      margin-bottom: 24px;
     }
 
     .bottomSide {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
+      p {
+        margin-bottom: 12px;
+      }
       .resetBtn {
-        margin-left: 10px;
-        width: 30px;
+        width: 100%;
         height: 30px;
         align-items: center;
         justify-content: center;

@@ -20,7 +20,22 @@
     }
   }
 
-  .popup {
-    padding-left: 95px !important;
+  .popupContainer {
+    .popup {
+      padding: 56px 0 56px 95px !important;
+      p {
+        margin: 0 !important;
+      }
+
+      .bottomSide {
+        display: flex;
+        align-items: center;
+
+        .resetBtn {
+          margin-left: 10px;
+          width: 30px;
+        }
+      }
+    }
   }
 }
