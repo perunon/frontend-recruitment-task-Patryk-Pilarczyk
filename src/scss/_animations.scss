@@ -1,0 +1,11 @@
+@keyframes resetBtnHover {
+  0% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(380deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,11 +1,16 @@
 .popupContainer {
   position: fixed;
-  display: flex;
   width: 100%;
   height: 100%;
   background: rgba($color-dark, 0.5);
   top: 0;
   left: 0;
+  display: flex;
+  visibility: hidden;
+
+  & .show {
+    visibility: visible;
+  }
 
   .popup {
     width: 90%;
@@ -15,6 +20,41 @@
     margin: auto;
     position: relative;
     padding: 56px 0px 56px 25px;
+
+    h2 {
+      @include title;
+      margin-bottom: 24px !important;
+    }
+
+    .bottomSide {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .resetBtn {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 32px;
+        background-color: $reset-button-background;
+        display: none;
+
+        &:hover {
+          opacity: rgba($reset-button-background, 0.9);
+          box-shadow: 0px 0px 10px -1px $reset-button-background;
+          cursor: pointer;
+
+          img {
+            animation-name: resetBtnHover;
+            animation-duration: 0.4s;
+            animation-timing-function: ease-out;
+          }
+        }
+      }
+    }
 
     .xIcon {
       width: 24px;
@@ -31,10 +71,6 @@
       &:hover {
         cursor: pointer;
       }
-    }
-    h2 {
-      @include title;
-      margin-bottom: 24px !important;
     }
   }
 }

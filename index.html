@@ -31,18 +31,27 @@
             and protection for modern and legacy infrastructures and SaaS
             platforms, managed via a single app with no hardware required.
           </p>
-          <button type="button">Button</button>
+          <button type="button" class="moduleBtn">Button</button>
         </div>
       </section>
-      <script src="/dist/all.js"></script>
     </main>
 
-    <div class="popupContainer">
-      <div class="popup">
+    <div class="popupContainer" id="popupContainer">
+      <div class="popup" id="popup">
         <h2>Alert!</h2>
-        <p>You have clicked <strong>X times</strong> to related button.</p>
-        <div class="xIcon"></div>
+        <div class="bottomSide">
+          <p>
+            You have clicked <strong id="popupCounterText"></strong> to related
+            button.
+          </p>
+          <button class="resetBtn" id="resetBtn">
+            <img src="/images/icons8-reset-24.png" />
+          </button>
+        </div>
+        <div class="xIcon" id="xIcon"></div>
       </div>
     </div>
+
+    <script src="/dist/all.js"></script>
   </body>
 </html>
