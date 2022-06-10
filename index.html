@@ -21,7 +21,8 @@
       <section class="moduleContainer">
         <img
           src="/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg"
-          alt="Beach"
+          alt="A photo showing empty beach by the ocean"
+          title="Empty beach by the ocean"
         />
 
         <div class="moduleContent">
@@ -31,26 +32,31 @@
             and protection for modern and legacy infrastructures and SaaS
             platforms, managed via a single app with no hardware required.
           </p>
-          <button type="button" id="loremIpsum" class="moduleBtn">
+          <button
+            aria-label="Button"
+            type="button"
+            id="loremIpsum"
+            class="moduleBtn"
+          >
             Button
           </button>
         </div>
       </section>
     </main>
 
-    <div class="popupContainer" id="popupContainer">
-      <div class="popup" id="popup">
+    <div class="popupContainer" id="popupDiv">
+      <div class="popup" id="popupCard">
         <h2>Alert!</h2>
         <div class="bottomSide">
           <p>
             You have clicked <strong id="popupCounterText"></strong> to related
             button.
           </p>
-          <button class="resetBtn" id="resetBtn">
+          <button aria-label="Reset" class="resetBtn" id="counterResetBtn">
             <img src="/images/icons8-reset-24.png" />
           </button>
         </div>
-        <div class="xIcon" id="xIcon"></div>
+        <div class="xIcon" id="popupCloseIcon"></div>
       </div>
     </div>
 

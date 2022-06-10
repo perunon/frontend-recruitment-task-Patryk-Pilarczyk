@@ -8,10 +8,6 @@
   display: flex;
   visibility: hidden;
 
-  & .show {
-    visibility: visible;
-  }
-
   .popup {
     width: 90%;
     max-width: 920px;

@@ -1,18 +1,14 @@
-const popup = document.getElementById('popupContainer');
+const popup = document.getElementById('popupDiv');
 const buttons = document.getElementsByClassName('moduleBtn');
 const popupCounterText = document.getElementById('popupCounterText');
-const xIcon = document.getElementById('xIcon');
-const resetBtn = document.getElementById('resetBtn');
+const xIcon = document.getElementById('popupCloseIcon');
+const resetBtn = document.getElementById('counterResetBtn');
 const localStorage = window.localStorage;
 
 const btnsCounters = [{}];
 
-const showPopup = () => {
-  popup.style.visibility = 'visible';
-};
-
-const hidePopup = () => {
-  popup.style.visibility = 'hidden';
+const togglePopup = () => {
+  popup.classList.toggle('show');
 };
 
 const setBtnsCounters = () => {
@@ -39,14 +35,14 @@ const counterIncreaseValue = ({ target }) => {
         resetBtn.style.display = 'flex';
         resetBtn.addEventListener('click', () => {
           element.counter = 0;
+          togglePopup();
           localStorage.setItem(element.button, element.counter);
-          hidePopup();
         });
       } else {
         resetBtn.style.display = 'none';
       }
       localStorage.setItem(element.button, element.counter);
-      showPopup();
+      togglePopup();
     }
   }
 };
@@ -55,12 +51,10 @@ const counterIncreaseValue = ({ target }) => {
 
 setBtnsCounters();
 
-xIcon.addEventListener('click', hidePopup);
+xIcon.addEventListener('click', togglePopup);
 
 popup.addEventListener('click', ({ target }) => {
-  if (!document.getElementById('popup').contains(target)) {
-    hidePopup();
+  if (!document.getElementById('popupCard').contains(target)) {
+    togglePopup();
   }
 });
-
-console.log(localStorage);
