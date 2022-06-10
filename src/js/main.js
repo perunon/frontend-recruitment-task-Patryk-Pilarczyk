@@ -3,6 +3,7 @@ const buttons = document.getElementsByClassName('moduleBtn');
 const popupCounterText = document.getElementById('popupCounterText');
 const xIcon = document.getElementById('xIcon');
 const resetBtn = document.getElementById('resetBtn');
+const localStorage = window.localStorage;
 
 const btnsCounters = [{}];
 
@@ -16,7 +17,13 @@ const hidePopup = () => {
 
 const setBtnsCounters = () => {
   for (let button of buttons) {
-    let btnCounter = { button: button, counter: 0 };
+    if (!localStorage.getItem(button.id)) {
+      localStorage.setItem(button.id, 0);
+    }
+    let btnCounter = {
+      button: button.id,
+      counter: localStorage.getItem(button.id),
+    };
     btnsCounters.push(btnCounter);
     button.addEventListener('click', (el) => counterIncreaseValue(el));
   }
@@ -24,7 +31,7 @@ const setBtnsCounters = () => {
 
 const counterIncreaseValue = ({ target }) => {
   for (let element of btnsCounters) {
-    if (element.button == target) {
+    if (element.button == target.id) {
       element.counter++;
       popupCounterText.textContent = `${element.counter} times`;
 
@@ -32,11 +39,13 @@ const counterIncreaseValue = ({ target }) => {
         resetBtn.style.display = 'flex';
         resetBtn.addEventListener('click', () => {
           element.counter = 0;
+          localStorage.setItem(element.button, element.counter);
           hidePopup();
         });
       } else {
         resetBtn.style.display = 'none';
       }
+      localStorage.setItem(element.button, element.counter);
       showPopup();
     }
   }
@@ -53,3 +62,5 @@ popup.addEventListener('click', ({ target }) => {
     hidePopup();
   }
 });
+
+console.log(localStorage);
